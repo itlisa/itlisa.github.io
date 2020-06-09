@@ -166,7 +166,7 @@
 <blockquote>
 <p><strong>css之loader加载注意事项</strong></p>
 </blockquote>
-<p>其中CSS文件的打包需要用到css-loader和style-loader两个loader，css-loader只是用于加载css文件（并没有添加到页面），而style-loader则是将打包后的css代码以<style>标签形式添加到页面头部。针对css文件使用的loader，注意有先后顺序，数组项越靠后越先执行</p>
+<p>其中CSS文件的打包需要用到css-loader和style-loader两个loader，css-loader只是用于加载css文件（并没有添加到页面），而style-loader则是将打包后的css代码以<code>&lt;style&gt;</code>标签形式添加到页面头部。针对css文件使用的loader，注意有先后顺序，数组项越靠后越先执行</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="built_in">module</span>:&#123;</span><br><span class="line">    rules:[&#123;</span><br><span class="line">        test:<span class="regexp">/\.css$/</span>,</span><br><span class="line">        use:[<span class="string">"style-loader"</span>, <span class="string">"css-loader"</span>, <span class="string">"postcss-loader"</span>]</span><br><span class="line">    &#125;]</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <blockquote>
@@ -176,7 +176,14 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    test: <span class="regexp">/\.(png|jpg|gif|svg)$/</span>,</span><br><span class="line">    loader: <span class="string">'file-loader'</span>,</span><br><span class="line">    options: &#123;</span><br><span class="line">        name: <span class="string">'images/[name].[ext]'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>其中name属性其实就是图片打包后的路径，其中包括图片名（[name]）和图片格式（[ext]）。<br>还有一种打包方式url-loader,这里limit属性的作用就是将小于8192B（8.192K）大小的图片转成base64格式，而大于这个大小的图片将会以file-loader的方式进行打包处理,如果不写limit属性，那么url-loader就会默认将所有图片转成base64。</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    test: <span class="regexp">/\.(png|jpg|gif|svg)$/</span>,</span><br><span class="line">    loader: <span class="string">'url-loader'</span>,</span><br><span class="line">    options: &#123;</span><br><span class="line">        name: <span class="string">'images/[name].[ext]'</span>,</span><br><span class="line">        limit: <span class="number">8192</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code class="javascript">{
+    test: <span class="regexp">/\.(png|jpg|gif|svg)$/</span>,
+    loader: <span class="string">'url-loader'</span>,
+    options: {
+        name: <span class="string">'images/[name].[ext]'</span>,
+        limit: <span class="number">8192</span>
+    }
+}</code></pre>
 <blockquote>
 <p><strong>webpack之watch</strong></p>
 </blockquote>
@@ -186,7 +193,7 @@
 </blockquote>
 <p>webpack-dev-server默认开启以上的监视功能。但两者监视效果存在差异：<br>1.webpack-dev-server自带的监视自动打包功能，新打包的文件存在于内存中，对硬盘上的bundle.js无影响。新文件的内存路径与配置文件中的publicPath相关，如<a href="http://localhost:8080/{publicPath}/bundle.js" target="_blank" rel="noopener">http://localhost:8080/{publicPath}/bundle.js</a><br>2.手动执行webpack -w来启动的watch效果，会修改硬盘上的bundle.js文件</p>
 <blockquote>
-<p>打包后的dist目录如下：</p>
+<p><strong>打包后的dist目录如下：</strong></p>
 </blockquote>
 <p><img src="https://b3logfile.com/file/2020/06/dist-ba510e0d.png" alt="dist.png"></p>
 ]]></content>
