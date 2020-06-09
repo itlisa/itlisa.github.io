@@ -28,7 +28,7 @@
 <meta property="og:description" content="平时喜欢做一些编程题，来扩展思维，把我平时练习中遇到的比较经典的题目以及我的解题思路放上来，大家可以一起学习交流，就当做是我的一个学习笔记吧！题目数量较多我会分批记录到我的博客上面来，文笔粗糙，只记录干货，这是编程题第二期分享.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-05T09:37:51.000Z">
-<meta property="article:modified_time" content="2020-06-09T07:27:56.000Z">
+<meta property="article:modified_time" content="2020-06-09T16:34:48.000Z">
 <meta property="article:author" content="lisa">
 <meta property="article:tag" content="绝对值最小 日期对象 字符串数组排序 数组交集">
 <meta name="twitter:card" content="summary">
@@ -224,7 +224,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-09 15:27:56" itemprop="dateModified" datetime="2020-06-09T15:27:56+08:00">2020-06-09</time>
+                <time title="修改时间：2020-06-10 00:34:48" itemprop="dateModified" datetime="2020-06-10T00:34:48+08:00">2020-06-10</time>
               </span>
 
           
@@ -240,14 +240,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.4k</span>
+              <span>4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -293,7 +293,13 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">方法一：</span><br><span class="line"><span class="keyword">let</span> a = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>， <span class="number">3</span>]); <span class="comment">// 先去重</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> <span class="built_in">Set</span>([<span class="number">2</span>, <span class="number">2</span>， <span class="number">3</span>, <span class="number">4</span>]);</span><br><span class="line"><span class="keyword">let</span> res = [...a].filter(<span class="function"><span class="params">item</span> =&gt;</span> b.has(item));</span><br><span class="line"><span class="built_in">console</span>.log(res)</span><br></pre></td></tr></table></figure>
 
 <p>方法二：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> b = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> c = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> handle = <span class="function">(<span class="params">...arr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> arr.reduce(<span class="function">(<span class="params">acc, cur</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> acc.filter(<span class="function"><span class="params">item</span> =&gt;</span> cur.includes(item));</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// console.log(handle(a, b, c))</span></span><br><span class="line">handle(a, b, c);</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> b = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">let</span> c = [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="keyword">const</span> handle = <span class="function">(<span class="params">...arr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> arr.reduce(<span class="function">(<span class="params">acc, cur</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> acc.filter(<span class="function"><span class="params">item</span> =&gt;</span> cur.includes(item));</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// console.log(handle(a, b, c))</span></span><br><span class="line">handle(a, b, c);</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>数字分割</strong></p>
+</blockquote>
+<p>题目描述：<br>将 ‘1000000000’形式的字符串，以每3位进行分割展示 ‘1000.000.000’, 多种实现方式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1000000000.</span>.toLocalString(); <span class="comment">// 1000,000,000</span></span><br><span class="line"><span class="number">1000000000.</span>.toLocalString(<span class="string">'de-DE'</span>); <span class="comment">// 1000.000.000 德国通过 .分割金钱</span></span><br><span class="line"></span><br><span class="line"><span class="number">1000000000.</span>.toLocalString().replace(<span class="string">'/,/g'</span>, <span class="string">'.'</span>); <span class="comment">// 1000.000.000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 下面这种实现方式有些繁琐，不推荐，思路放上来供大家参考</span></span><br><span class="line"><span class="keyword">const</span> _splitNumber = <span class="function">(<span class="params">num</span>)=&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> nums = num.toString();</span><br><span class="line">    <span class="keyword">let</span> len = ~~(nums.length / <span class="number">3</span>);</span><br><span class="line">    <span class="keyword">let</span> res = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        res = <span class="string">'.'</span> + nums.slice(<span class="number">-3</span>) + res;</span><br><span class="line">        nums = nums.slice(<span class="number">0</span>, nums.length - <span class="number">3</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">if</span> (nums) &#123;</span><br><span class="line">        res = nums + res;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> newNum = _splitNumber(<span class="number">1000000000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newNum); <span class="comment">// 1000.000.000</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -434,7 +440,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">14k</span>
+    <span title="站点总字数">15k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
