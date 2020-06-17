@@ -28,9 +28,9 @@
 <meta property="og:description" content="最近迷上做js算法题了，哈哈哈，以后会持续更新我做过比较经典有意思的算法题，我目前只做一些比较基础的，查缺补漏，感觉自己的js基础还是欠缺，勤能补拙，先把地基打好才能盖出好房子，你说是吧~~">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-04T10:13:12.000Z">
-<meta property="article:modified_time" content="2020-06-17T08:24:20.000Z">
+<meta property="article:modified_time" content="2020-06-17T10:06:56.000Z">
 <meta property="article:author" content="lisa">
-<meta property="article:tag" content="数组降维 vue双向绑定原理 冒泡排序 快速排序 二分查找算法 函数节流防抖 数组对象扩展">
+<meta property="article:tag" content="数组降维 vue双向绑定原理 冒泡排序 快速排序 插入排序 二分查找算法 函数节流防抖 数组对象扩展">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2020/06/04/%E7%BC%96%E7%A8%8B1/">
@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-17 16:24:20" itemprop="dateModified" datetime="2020-06-17T16:24:20+08:00">2020-06-17</time>
+                <time title="修改时间：2020-06-17 18:06:56" itemprop="dateModified" datetime="2020-06-17T18:06:56+08:00">2020-06-17</time>
               </span>
 
           
@@ -241,7 +241,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.9k</span>
+              <span>4.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -306,6 +306,12 @@
 <p>3、递归</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">quickSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (arr.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125; <span class="comment">//判断数组，一个长度直接返回 </span></span><br><span class="line">    <span class="keyword">var</span> baseNum = arr[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> left = [];</span><br><span class="line">    <span class="keyword">var</span> right = [];</span><br><span class="line">    <span class="keyword">var</span> mid = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (arr[i] &lt; baseNum) &#123;</span><br><span class="line">            left.push(arr[i])</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (arr[i] &gt; baseNum) &#123;</span><br><span class="line">            right.push(arr[i]);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            mid.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> quickSort(left).concat(mid, quickSort(right));</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> _sort = quickSort([<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">4</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(_sort); <span class="comment">// [1,2,3,4]</span></span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p><strong>插入排序</strong></p>
+</blockquote>
+<p>快速排序类似于整理扑克牌，每次将下一个值和上一个值进行比较大小，然后互换位置，在小规模数据或者基本有序数据时特别高效.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertSort</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> temp;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = i; j &gt; <span class="number">0</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (arr[j] &lt; arr[j - <span class="number">1</span>]) &#123;</span><br><span class="line">                temp = arr[j - <span class="number">1</span>];</span><br><span class="line">                arr[j - <span class="number">1</span>] = arr[j];</span><br><span class="line">                arr[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> arr;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> res = insertSort([<span class="number">2</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">7</span>, <span class="number">10</span>, <span class="number">32</span>, <span class="number">90</span>, <span class="number">9</span>, <span class="number">11</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">10</span>]);</span><br><span class="line"><span class="built_in">console</span>.log(res) <span class="comment">// [0, 1, 2, 5, 7, 9, 10, 10, 10, 11, 32, 90]</span></span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -314,7 +320,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E7%BB%84%E9%99%8D%E7%BB%B4-vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95-%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96-%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E6%89%A9%E5%B1%95/" rel="tag"># 数组降维 vue双向绑定原理 冒泡排序 快速排序 二分查找算法 函数节流防抖 数组对象扩展</a>
+              <a href="/tags/%E6%95%B0%E7%BB%84%E9%99%8D%E7%BB%B4-vue%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86-%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F-%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F-%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F-%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95-%E5%87%BD%E6%95%B0%E8%8A%82%E6%B5%81%E9%98%B2%E6%8A%96-%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E6%89%A9%E5%B1%95/" rel="tag"># 数组降维 vue双向绑定原理 冒泡排序 快速排序 插入排序 二分查找算法 函数节流防抖 数组对象扩展</a>
           </div>
 
         
@@ -445,7 +451,7 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">16k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
