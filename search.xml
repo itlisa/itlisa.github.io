@@ -226,4 +226,24 @@
         <tag>webpack</tag>
       </tags>
   </entry>
+  <entry>
+    <title>vue实战小技巧</title>
+    <url>/2020/06/23/vue%E5%AE%9E%E6%88%98%E5%B0%8F%E6%8A%80%E5%B7%A7/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>外部监听组件生命周期函数</strong></p>
+</blockquote>
+<p>使用场景：<br>应用第三方组件，需要监听第三方组件数据变化，但是没有提供change事件，so,这时候就需要你在外部去监听组件的updated钩子函数</p>
+<p>代码实现：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;!--通过@hook:updated=<span class="string">"xxx"</span>监听组件的updated生命钩子函数--&gt;</span><br><span class="line">    &lt;!--组件的所有生命周期钩子函数都可以通过这种方式去实现监听--&gt;</span><br><span class="line">    &lt;c-component @hook:updated=<span class="string">"$_handleSelectUpdated"</span>&gt;&lt;<span class="regexp">/c-component&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span>&#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">        <span class="keyword">return</span>&#123;&#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    components:&#123;</span><br><span class="line">        CComponent</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        $_handleSelectUpdated() &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'c组件数据已更新'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&lt;style lang=<span class="string">"less"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/style&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>内部监听组件的生命周期函数</strong></p>
+</blockquote>
+<p>场景需要：<br>监听事件和销毁事件放在一起，增加可读性</p>
+<p>代码实现：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">'chart'</span>&gt;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">default</span>&#123;</span><br><span class="line">        data()&#123;</span><br><span class="line">            <span class="keyword">return</span>&#123;&#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        mounted()&#123;</span><br><span class="line">            <span class="keyword">this</span>.$chart = echart.init(<span class="keyword">this</span>.$el);</span><br><span class="line">            <span class="comment">// 图表配置，请求赋值数据等操作</span></span><br><span class="line">            <span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>,<span class="keyword">this</span>.$_handleResizeChart);</span><br><span class="line">            <span class="comment">// 通过hook监听组件销毁钩子，并取消监听事件 $once 只触发一次，也可以使用$on进行监听。</span></span><br><span class="line">            <span class="keyword">this</span>.$once(<span class="string">'hook:beforeDestroy'</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                <span class="built_in">window</span>.removeEventListener(<span class="string">'resize'</span>,<span class="keyword">this</span>.$_handleResizeChart);</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            $_handleResizeChart()&#123;</span><br><span class="line">                <span class="comment">// this.$chart.resize();</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>vue</tag>
+      </tags>
+  </entry>
 </search>
