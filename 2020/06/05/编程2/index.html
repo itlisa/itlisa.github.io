@@ -28,7 +28,7 @@
 <meta property="og:description" content="平时喜欢做一些编程题，来扩展思维，把我平时练习中遇到的比较经典的题目以及我的解题思路放上来，大家可以一起学习交流，就当做是我的一个学习笔记吧！题目数量较多我会分批记录到我的博客上面来，文笔粗糙，只记录干货，这是编程题第二期分享.">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-05T09:37:51.000Z">
-<meta property="article:modified_time" content="2020-06-11T17:17:57.000Z">
+<meta property="article:modified_time" content="2020-06-25T14:13:35.000Z">
 <meta property="article:author" content="lisa">
 <meta property="article:tag" content="绝对值最小 日期对象 字符串数组排序 数组交集">
 <meta name="twitter:card" content="summary">
@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-12 01:17:57" itemprop="dateModified" datetime="2020-06-12T01:17:57+08:00">2020-06-12</time>
+                <time title="修改时间：2020-06-25 22:13:35" itemprop="dateModified" datetime="2020-06-25T22:13:35+08:00">2020-06-25</time>
               </span>
 
           
@@ -241,14 +241,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4k</span>
+              <span>5.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -300,7 +300,22 @@
 <p><strong>数字分割</strong></p>
 </blockquote>
 <p>题目描述：<br>将 ‘1000000000’形式的字符串，以每3位进行分割展示 ‘1000.000.000’, 多种实现方式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1000000000.</span>.toLocalString(); <span class="comment">// 1000,000,000</span></span><br><span class="line"><span class="number">1000000000.</span>.toLocalString(<span class="string">'de-DE'</span>); <span class="comment">// 1000.000.000 德国通过 .分割金钱</span></span><br><span class="line"></span><br><span class="line"><span class="number">1000000000.</span>.toLocalString().replace(<span class="string">'/,/g'</span>, <span class="string">'.'</span>); <span class="comment">// 1000.000.000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 下面这种实现方式有些繁琐，不推荐，思路放上来供大家参考</span></span><br><span class="line"><span class="keyword">const</span> _splitNumber = <span class="function">(<span class="params">num</span>)=&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> nums = num.toString();</span><br><span class="line">    <span class="keyword">let</span> len = ~~(nums.length / <span class="number">3</span>);</span><br><span class="line">    <span class="keyword">let</span> res = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        res = <span class="string">'.'</span> + nums.slice(<span class="number">-3</span>) + res;</span><br><span class="line">        nums = nums.slice(<span class="number">0</span>, nums.length - <span class="number">3</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">if</span> (nums) &#123;</span><br><span class="line">        res = nums + res;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> newNum = _splitNumber(<span class="number">1000000000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newNum); <span class="comment">// 1000.000.000</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1000000000.</span>.toLocalString(); <span class="comment">// 1000,000,000</span></span><br><span class="line"><span class="number">1000000000.</span>.toLocalString(<span class="string">'de-DE'</span>); <span class="comment">// 1000.000.000 德国通过 .分割金钱</span></span><br><span class="line"></span><br><span class="line"><span class="number">1000000000.</span>.toLocalString().replace(<span class="string">'/,/g'</span>, <span class="string">'.'</span>); <span class="comment">// 1000.000.000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 下面这种实现方式有些繁琐，不推荐，思路放上来供大家参考</span></span><br><span class="line"><span class="keyword">const</span> _splitNumber = <span class="function">(<span class="params">num</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> nums = num.toString();</span><br><span class="line">    <span class="keyword">let</span> len = ~~(nums.length / <span class="number">3</span>);</span><br><span class="line">    <span class="keyword">let</span> res = <span class="string">''</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        res = <span class="string">'.'</span> + nums.slice(<span class="number">-3</span>) + res;</span><br><span class="line">        nums = nums.slice(<span class="number">0</span>, nums.length - <span class="number">3</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">if</span> (nums) &#123;</span><br><span class="line">        res = nums + res;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> newNum = _splitNumber(<span class="number">1000000000</span>);</span><br><span class="line"><span class="built_in">console</span>.log(newNum); <span class="comment">// 1000.000.000</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>实现对象深拷贝</strong></p>
+</blockquote>
+<p>浅拷贝：也就是拷贝A对象里面的数据，但是不拷贝A对象里面的子对象。</p>
+<p>深拷贝：会克隆出一个对象，数据相同，但是引用地址不同（就是拷贝A对象里面的数据，而且拷贝它里面的子对象）。</p>
+<p>做这道题首先要明白什么是深拷贝，什么是浅拷贝，实现深拷贝和浅拷贝都有哪些方法，若自己手动实现一个深拷贝，不假思索直接写就是下面这样：</p>
+<p>代码示例（错误示范）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepcopy</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> res = &#123;&#125;;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj === <span class="string">'object'</span>) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">            res[key] = obj[key]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        res = obj;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span>,</span><br><span class="line">    c: &#123;</span><br><span class="line">        d: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> newobj = deepcopy(obj);</span><br><span class="line">newobj.a = <span class="number">2</span>;</span><br><span class="line"><span class="built_in">console</span>.log(obj, newobj); <span class="comment">// obj &#123;a:1,b:2,c:&#123;d:1&#125;&#125;  newobj &#123;a:2,b:2,c:&#123;d:1&#125;&#125;;</span></span><br></pre></td></tr></table></figure>
+
+<p>看起来貌似实现了，然而并没有，试着改一下d的值看一下，是不是发现跟你预想的不太一样，其中一个d的值改动影响了另一个对象中的d, 这并不是咱们想要的结果，深拷贝只实现了一层，相当于Object.assign({}, obj)这种方法拷贝的对象，只会拷贝一层，这个地方需要注意哦，那我们看一下如何手写实现真正的深拷贝。</p>
+<p>代码实现 （正确示范）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">deepcopy</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res = &#123;&#125;;</span><br><span class="line">    <span class="comment">// 判断参数类型是否为对象类型</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> obj !== <span class="string">'object'</span>) &#123;</span><br><span class="line">        res = obj;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 通过递归实现</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> obj) &#123;</span><br><span class="line">            res[key] = <span class="keyword">typeof</span> obj[key] === <span class="string">'object'</span> ? deepcopy(obj[key]) : obj[key];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: <span class="number">2</span>,</span><br><span class="line">    c: &#123;</span><br><span class="line">        d: <span class="number">3</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> newobj = deepcopy(obj);</span><br><span class="line">newobj.c.d = <span class="number">4</span>;</span><br><span class="line"><span class="built_in">console</span>.log(newobj);</span><br></pre></td></tr></table></figure>
+
+<p>实现深拷贝应该还有很多好的方式，大家可以自己写一下，换一种思路试试看！</p>
 
     </div>
 
@@ -441,13 +456,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">19k</span>
+    <span title="站点总字数">20k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">17 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
 </div>
 
         
