@@ -295,8 +295,8 @@
       </tags>
   </entry>
   <entry>
-    <title>ES6 新增语法</title>
-    <url>/2020/06/26/ES6-%E6%96%B0%E5%A2%9E%E8%AF%AD%E6%B3%95/</url>
+    <title>ES6+新增语法</title>
+    <url>/2020/06/26/ES6+%E6%96%B0%E5%A2%9E%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<blockquote>
 <p><strong>ES6新增值比较函数Object.is()</strong></p>
 </blockquote>
@@ -307,9 +307,31 @@
 
 <p>但对于NaN、0、+0、 -0，则和 “===” 不同</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span> <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>, <span class="literal">NaN</span>) <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> === <span class="number">-0</span> <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="number">0</span>, <span class="number">-0</span>) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="number">-0</span> === +<span class="number">0</span> <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="number">-0</span>, +<span class="number">0</span>) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>es8新增语法 padStart()padEnd()</strong></p>
+</blockquote>
+<p>这两个函数方法是ES8新增的实例方法，不兼容IE浏览器，函数接受两个参数，第一个是字符串需要填充的目标长度（必填），第二个是填充字符串（可选）,如果填充的字符串长度超过了目标长度，则保留最左侧的部分。<br>使用方法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">'x'</span>.padStart(<span class="number">4</span>,<span class="string">'ab'</span>); <span class="comment">// 'abax'</span></span><br><span class="line"></span><br><span class="line"><span class="string">'x'</span>.padEnd(<span class="number">5</span>,<span class="string">'ad'</span>); <span class="comment">// 'xabab'</span></span><br></pre></td></tr></table></figure>
+
+<p>假设现在有这样一个需求，实现mask函数将’123456’转为’##3456’,只保留最后四个字符。</p>
+<p>试着用上面提供的方法做一下</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mask = <span class="function">(<span class="params">str,maskChar=<span class="string">'#'</span></span>)=&gt;</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> str.slice(<span class="number">-4</span>).padStart(str.length,maskChar);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mask(<span class="string">'123456'</span>)) <span class="comment">// ##3456</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>object.is()</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>代码安全隐患</title>
+    <url>/2020/06/27/%E4%BB%A3%E7%A0%81%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3/</url>
+    <content><![CDATA[<blockquote>
+<p><strong>a标签慎用target=”_blank”</strong></p>
+</blockquote>
+<p>存在问题：<br>1：新打开的窗口可以通过window.opener获取到来源页面的window对象，即使跨域也可以，通过修改window.opener.location.href=’xxx’，指向另一个地址，这样新窗口可能会把原来的地址改了并进行页面的伪装来欺骗用户。</p>
+<p>2：新打开的窗口与原窗口共用一个进程，若是新页面有性能不好的代码也会影响原页面。</p>
+<p>解决方案：<br>1：加上rel=”noopener” 或者 rel=”noreferrer”,这样新窗口打开的window.opener就是null,而且会让新窗口运行在独立的进程里，不会拖累原来的页面的进程。（有些浏览器针对性能的优化即使不加，新窗口也会在独立进程打开，为了安全起见还是加一下比较好）</p>
+<p>代码实验：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// a 标签模拟点击跳转新页面</span></span><br><span class="line">&lt;a href=<span class="string">"http://itlisa.github.io/"</span> target=<span class="string">"_blank"</span>&gt;点击跳转&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 新页面控制台模拟修改原页面url</span></span><br><span class="line"><span class="regexp">window.opener.location.href = 'http:/</span><span class="regexp">/itlisa.github.io';</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">此时原页面已经被这个'http:/</span><span class="regexp">/itlisa.github.io'这个网站替换掉了。</span></span><br></pre></td></tr></table></figure>]]></content>
   </entry>
 </search>
