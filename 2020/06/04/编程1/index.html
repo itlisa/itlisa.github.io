@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="最近迷上做js算法题了，哈哈哈，以后会持续更新我做过比较经典有意思的算法题，我目前只做一些比较基础的，查缺补漏，感觉自己的js基础还是欠缺，勤能补拙，先把地基打好才能盖出好房子，你说是吧~~">
+  <meta name="description" content="最近迷上做js算法题了，哈哈哈，以后会持续更新我做过比较经典有意思的算法题，我目前只做一些比较基础的，查缺补漏，感觉自己的js基础还是欠缺，勤能补拙，先把地基打好才能盖出好房子，你说是吧~~  数组降维  将多维数组降成一维数组结构 1234567891011121314function _myFlat(arr) &amp;#123;    var res &#x3D; [];    for (var i &#x3D; 0;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编程题（一）">
 <meta property="og:url" content="http://yoursite.com/2020/06/04/%E7%BC%96%E7%A8%8B1/index.html">
 <meta property="og:site_name" content="lisa的个人博客">
-<meta property="og:description" content="最近迷上做js算法题了，哈哈哈，以后会持续更新我做过比较经典有意思的算法题，我目前只做一些比较基础的，查缺补漏，感觉自己的js基础还是欠缺，勤能补拙，先把地基打好才能盖出好房子，你说是吧~~">
+<meta property="og:description" content="最近迷上做js算法题了，哈哈哈，以后会持续更新我做过比较经典有意思的算法题，我目前只做一些比较基础的，查缺补漏，感觉自己的js基础还是欠缺，勤能补拙，先把地基打好才能盖出好房子，你说是吧~~  数组降维  将多维数组降成一维数组结构 1234567891011121314function _myFlat(arr) &amp;#123;    var res &#x3D; [];    for (var i &#x3D; 0;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-04T10:13:12.000Z">
-<meta property="article:modified_time" content="2020-06-18T04:51:41.000Z">
+<meta property="article:modified_time" content="2020-06-27T15:07:05.000Z">
 <meta property="article:author" content="lisa">
 <meta property="article:tag" content="数组降维 vue双向绑定原理  函数节流防抖 数组对象扩展  冒泡排序 快速排序 插入排序 选择排序 二分查找算法">
 <meta name="twitter:card" content="summary">
@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-18 12:51:41" itemprop="dateModified" datetime="2020-06-18T12:51:41+08:00">2020-06-18</time>
+                <time title="修改时间：2020-06-27 23:07:05" itemprop="dateModified" datetime="2020-06-27T23:07:05+08:00">2020-06-27</time>
               </span>
 
           
@@ -261,13 +261,12 @@
 
       
         <p>最近迷上做js算法题了，哈哈哈，以后会持续更新我做过比较经典有意思的算法题，我目前只做一些比较基础的，查缺补漏，感觉自己的js基础还是欠缺，勤能补拙，先把地基打好才能盖出好房子，你说是吧~~</p>
-<a id="more"></a>
-
 <blockquote>
 <p><strong>数组降维</strong></p>
 </blockquote>
 <p>将多维数组降成一维数组结构</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_myFlat</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="comment">// 判断当前元素是否是数组</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(arr[i])) &#123;</span><br><span class="line">            <span class="comment">// arguments.callee（）：匿名函数的递归调用，保证函数的封装性，与函数名解耦</span></span><br><span class="line">            res = res.concat(<span class="built_in">arguments</span>.callee(arr[i]));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            res = res.concat(arr[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(_myFlat([<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, [<span class="number">5</span>, [<span class="number">6</span>, [<span class="number">8</span>]]]])); <span class="comment">// [1,2,4,5,6,8]</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 
 <blockquote>
 <p><strong>数组对象方法扩展</strong></p>
@@ -334,7 +333,7 @@
     <div class="post-nav">
       <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2020/06/05/dragBox/" rel="next" title="实现一个对话框支持拖拽">
+    <a href="/2020/06/05/%E6%8B%96%E6%8B%BD%E6%A1%86/" rel="next" title="实现一个对话框支持拖拽">
       实现一个对话框支持拖拽 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
