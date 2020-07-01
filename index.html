@@ -193,6 +193,89 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/01/%E9%9D%A2%E8%AF%95%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/header.jpeg">
+      <meta itemprop="name" content="lisa">
+      <meta itemprop="description" content="发表一些技术相关的文章以及我的踩坑经历等">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lisa的个人博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/07/01/%E9%9D%A2%E8%AF%95%E9%A2%98/" class="post-title-link" itemprop="url">面试题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-07-01 15:31:36 / 修改时间：16:17:59" itemprop="dateCreated datePublished" datetime="2020-07-01T15:31:36+08:00">2020-07-01</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>431</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <blockquote>
+<p><strong>矩形碰撞检测（不考虑旋转）</strong></p>
+</blockquote>
+<p>2d矩形碰撞检测，矩形平行于坐标轴</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/07/01/%E9%9D%A2%E8%AF%95%E9%A2%98/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/27/%E4%BB%A3%E7%A0%81%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -396,7 +479,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-27 23:05:08" itemprop="dateModified" datetime="2020-06-27T23:05:08+08:00">2020-06-27</time>
+                <time title="修改时间：2020-07-01 15:28:20" itemprop="dateModified" datetime="2020-07-01T15:28:20+08:00">2020-07-01</time>
               </span>
 
           <br>
@@ -427,8 +510,7 @@
           <blockquote>
 <p><strong>单例模式</strong></p>
 </blockquote>
-<p>顾名思义：一个类有且只有一个实例，称之为单例模式。<br>代码实现：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建一个构造函数返回值为对象</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!Fn.obj) &#123;</span><br><span class="line">        Fn.obj = &#123;&#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">    Fn.obj.sayHi = <span class="string">'hello'</span>;</span><br><span class="line">    <span class="keyword">return</span> Fn.obj;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 每次调用，都会创建一个实例，且指向同一个内存地址Fn.obj</span></span><br><span class="line"><span class="keyword">const</span> newFn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> fn;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!fn) &#123;</span><br><span class="line">            fn = <span class="keyword">new</span> Fn();</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">return</span> fn;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f1 = newFn();</span><br><span class="line"><span class="keyword">var</span> f2 = newFn();</span><br><span class="line"><span class="built_in">console</span>.log(f1 === f2); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<p>顾名思义：一个类有且只有一个实例，称之为单例模式。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/24/js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/#more" rel="contents">
@@ -645,7 +727,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-27 23:06:11" itemprop="dateModified" datetime="2020-06-27T23:06:11+08:00">2020-06-27</time>
+                <time title="修改时间：2020-07-01 15:28:42" itemprop="dateModified" datetime="2020-07-01T15:28:42+08:00">2020-07-01</time>
               </span>
 
           <br>
@@ -677,7 +759,6 @@
 <p><strong>webpack打包时遇到的问题以及解决方案</strong></p>
 </blockquote>
 <p>以下是我的webpack相关配置项</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>); <span class="comment">// 引入path path是nodejs内置的package，用来处理路径的</span></span><br><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">"html-webpack-plugin"</span>); <span class="comment">// html自动打包工具</span></span><br><span class="line"><span class="keyword">const</span> uglifyjsWbpackPlugin = <span class="built_in">require</span>(<span class="string">"uglifyjs-webpack-plugin"</span>); <span class="comment">// js 打包工具</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    entry: <span class="string">'./src/index.js'</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(__dirname, <span class="string">"dist"</span>),</span><br><span class="line">        filename: <span class="string">"bundle.js"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    devServer: &#123;</span><br><span class="line">        open: <span class="literal">true</span>,</span><br><span class="line">        port: <span class="number">8888</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="built_in">module</span>: &#123;</span><br><span class="line">        rules: [&#123;</span><br><span class="line">                test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">                use: <span class="string">'babel-loader'</span>,</span><br><span class="line">                include: <span class="regexp">/src/</span>, <span class="comment">// 只转化src目录下的js</span></span><br><span class="line">                exclude: <span class="regexp">/node_modules/</span> <span class="comment">// 排除掉node_modules，优化打包速度</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">                use: [<span class="string">"style-loader"</span>, <span class="string">"css-loader"</span>, <span class="string">"postcss-loader"</span>]</span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                test: <span class="regexp">/\.(jpeg|png|gif|jpg)$/</span>,</span><br><span class="line">                use: [&#123;</span><br><span class="line">                    loader: <span class="string">"file-loader"</span>,</span><br><span class="line">                    options: &#123;</span><br><span class="line">                        name: <span class="string">"images/[name].[ext]"</span>,</span><br><span class="line">                        esModule: <span class="literal">false</span> <span class="comment">// 关闭es 模块语法</span></span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;]</span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">            template: path.resolve(__dirname, <span class="string">"index.html"</span>),</span><br><span class="line">            filename: <span class="string">"index.html"</span></span><br><span class="line">        &#125;),</span><br><span class="line">        <span class="keyword">new</span> uglifyjsWbpackPlugin() <span class="comment">// js压缩优化</span></span><br><span class="line">    ],</span><br><span class="line">    watch: <span class="literal">true</span> <span class="comment">// 监听文件改动并自动打包</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/09/webpack%E6%89%93%E5%8C%85%E6%97%B6%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/#more" rel="contents">
@@ -735,7 +816,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-27 23:06:35" itemprop="dateModified" datetime="2020-06-27T23:06:35+08:00">2020-06-27</time>
+                <time title="修改时间：2020-07-01 15:26:52" itemprop="dateModified" datetime="2020-07-01T15:26:52+08:00">2020-07-01</time>
               </span>
 
           <br>
@@ -767,10 +848,14 @@
 <p><strong>canvas绘制多边形</strong></p>
 </blockquote>
 <p>canvas封装绘制多边形方法，通过传参来实现绘制图形的定制需要。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// html部分</span></span><br><span class="line">&lt;canvas width = <span class="number">400</span> height = <span class="number">400</span> id = <span class="string">"canvas"</span> &gt; &lt;<span class="regexp">/canvas&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// js部分</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">angleToRadian</span>(<span class="params">angle</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 角度转弧度</span></span><br><span class="line">    <span class="keyword">return</span> angle * <span class="built_in">Math</span>.PI / <span class="number">180</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&lt;!--more--&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* 参数说明：</span></span><br><span class="line"><span class="comment">* side:边数</span></span><br><span class="line"><span class="comment">* r: 半径</span></span><br><span class="line"><span class="comment">* offsetX:圆心默认在画布左上角，需要将圆心移动到画布中间，这是水平方向上的移动距离</span></span><br><span class="line"><span class="comment">* offsetY:这是垂直方向移动距离</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getAxisPoints</span>(<span class="params">side, r, offsetX, offsetY</span>) </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">        &#123;side&#125; 几边形</span></span><br><span class="line"><span class="comment">        &#123;r&#125; 半径</span></span><br><span class="line"><span class="comment">        &#123;offsetX&#125; x轴偏移距离</span></span><br><span class="line"><span class="comment">        &#123;offsetY&#125; y轴偏移距离</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">var</span> angle = <span class="number">360</span> / side; <span class="comment">// 每条边所占角度</span></span><br><span class="line">    <span class="keyword">var</span> axisArr = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; side; i++) &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">         * 求出每个顶点坐标 angle为弧度值；</span></span><br><span class="line"><span class="comment">         * x = r * Math.cos(angle);  </span></span><br><span class="line"><span class="comment">         * y = r * Math.sin(angle); </span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        <span class="keyword">var</span> x = offsetX + <span class="built_in">Math</span>.cos(angleToRadian(angle * (i + <span class="number">1</span>))) * r;</span><br><span class="line">        <span class="keyword">var</span> y = offsetY + <span class="built_in">Math</span>.sin(angleToRadian(angle * (i + <span class="number">1</span>))) * r;</span><br><span class="line">        axisArr.push(&#123;</span><br><span class="line">            x,</span><br><span class="line">            y</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> axisArr;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> _axisArr = getAxisPoints(<span class="number">3</span>, <span class="number">150</span>, <span class="number">200</span>, <span class="number">200</span>); <span class="comment">// 取到多边形顶点坐标</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> canvas = <span class="built_in">document</span>.querySelector(<span class="string">"#canvas"</span>);</span><br><span class="line"><span class="keyword">var</span> txt = canvas.getContext(<span class="string">"2d"</span>);</span><br><span class="line">txt.beginPath();</span><br><span class="line">txt.moveTo(_axisArr[<span class="number">0</span>].x, _axisArr[<span class="number">0</span>].y);</span><br><span class="line">_axisArr.map(<span class="function"><span class="keyword">function</span>(<span class="params">item, index</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (index &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        txt.lineTo(_axisArr[index].x, _axisArr[index].y)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">txt.lineTo(_axisArr[<span class="number">0</span>].x, _axisArr[<span class="number">0</span>].y);</span><br><span class="line">txt.strokeStyle = <span class="string">"#000"</span>;</span><br><span class="line">txt.stroke();</span><br></pre></td></tr></table></figure>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/06/canvas%E7%BB%98%E5%88%B6%E5%A4%9A%E8%BE%B9%E5%BD%A2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -820,7 +905,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-27 23:06:54" itemprop="dateModified" datetime="2020-06-27T23:06:54+08:00">2020-06-27</time>
+                <time title="修改时间：2020-07-01 15:27:20" itemprop="dateModified" datetime="2020-07-01T15:27:20+08:00">2020-07-01</time>
               </span>
 
           <br>
@@ -849,10 +934,6 @@
 
       
           <p>平时喜欢做一些编程题，来扩展思维，把我平时练习中遇到的比较经典的题目以及我的解题思路放上来，大家可以一起学习交流，就当做是我的一个学习笔记吧！题目数量较多我会分批记录到我的博客上面来，文笔粗糙，只记录干货，这是编程题第二期分享.</p>
-<blockquote>
-<p><strong>绝对值最小</strong></p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [<span class="number">-98</span>, <span class="number">-22</span>, <span class="number">-8</span>, <span class="number">-3</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">33</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">findMinAbsOfArr</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> newArr = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">        newArr.push(<span class="built_in">Math</span>.abs(a[i]));</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">let</span> num = <span class="built_in">Math</span>.min(...newArr);</span><br><span class="line">    <span class="keyword">let</span> index;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; a.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">Math</span>.abs(a[i]) == num) &#123;</span><br><span class="line">            index = a.indexOf(a[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> a[index];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(findMinAbsOfArr(a));</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/05/%E7%BC%96%E7%A8%8B2/#more" rel="contents">
@@ -910,7 +991,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-27 23:08:30" itemprop="dateModified" datetime="2020-06-27T23:08:30+08:00">2020-06-27</time>
+                <time title="修改时间：2020-07-01 15:27:44" itemprop="dateModified" datetime="2020-07-01T15:27:44+08:00">2020-07-01</time>
               </span>
 
           <br>
@@ -942,10 +1023,6 @@
 <blockquote>
 <p> <strong>创建一个dialog类，实现一个dialog对话框，可拖拽</strong></p>
 </blockquote>
-<p>效果图</p>
-<p><img src="https://b3logfile.com/file/2020/06/1-a4f64515.png" alt="1.png"></p>
-<p><img src="https://b3logfile.com/file/2020/06/2-f2a4be67.png" alt="2.png"></p>
-<p><img src="https://b3logfile.com/file/2020/06/3-ba32c5ee.png" alt="3.png"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/05/%E6%8B%96%E6%8B%BD%E6%A1%86/#more" rel="contents">
@@ -968,99 +1045,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/04/%E7%BC%96%E7%A8%8B1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/header.jpeg">
-      <meta itemprop="name" content="lisa">
-      <meta itemprop="description" content="发表一些技术相关的文章以及我的踩坑经历等">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lisa的个人博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/04/%E7%BC%96%E7%A8%8B1/" class="post-title-link" itemprop="url">编程题（一）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-06-04 18:13:12" itemprop="dateCreated datePublished" datetime="2020-06-04T18:13:12+08:00">2020-06-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-27 23:07:05" itemprop="dateModified" datetime="2020-06-27T23:07:05+08:00">2020-06-27</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>4.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最近迷上做js算法题了，哈哈哈，以后会持续更新我做过比较经典有意思的算法题，我目前只做一些比较基础的，查缺补漏，感觉自己的js基础还是欠缺，勤能补拙，先把地基打好才能盖出好房子，你说是吧~~</p>
-<blockquote>
-<p><strong>数组降维</strong></p>
-</blockquote>
-<p>将多维数组降成一维数组结构</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_myFlat</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> res = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">        <span class="comment">// 判断当前元素是否是数组</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(arr[i])) &#123;</span><br><span class="line">            <span class="comment">// arguments.callee（）：匿名函数的递归调用，保证函数的封装性，与函数名解耦</span></span><br><span class="line">            res = res.concat(<span class="built_in">arguments</span>.callee(arr[i]));</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            res = res.concat(arr[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(_myFlat([<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>, [<span class="number">5</span>, [<span class="number">6</span>, [<span class="number">8</span>]]]])); <span class="comment">// [1,2,4,5,6,8]</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/04/%E7%BC%96%E7%A8%8B1/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1127,12 +1116,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span>
       </div>
   </nav>
