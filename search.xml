@@ -300,6 +300,16 @@
 <p>试着用上面提供的方法做一下</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mask = <span class="function">(<span class="params">str,maskChar=<span class="string">'#'</span></span>)=&gt;</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> str.slice(<span class="number">-4</span>).padStart(str.length,maskChar);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mask(<span class="string">'123456'</span>)) <span class="comment">// ##3456</span></span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p><strong>Object.fromEntries()和Object.entries()</strong></p>
+</blockquote>
+<p>场景需要：<br>let obj = {a:1,b:2,c:3}; 提取对象中所有value值大于1的键值对并返回最新的对象</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> newObj = <span class="built_in">Object</span>.fromEntries(<span class="built_in">Object</span>.entries(obj).filter(<span class="function">(<span class="params">[k,v]</span>)=&gt;</span>v&gt;<span class="number">1</span>)); <span class="comment">// &#123;b: 2, c: 3&#125;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>…rest代替arguments</strong></p>
+</blockquote>
+<p>es6箭头函数中不识别arguments对象，使用…rest来替代arguments获取参数。</p>
 ]]></content>
       <tags>
         <tag>object.is()</tag>

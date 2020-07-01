@@ -28,7 +28,7 @@
 <meta property="og:description" content="ES6新增值比较函数Object.is()  ES6新增加的比较方法大多数情况下等价于’&#x3D;&#x3D;&#x3D;’ 12345678910111213141 &#x3D;&#x3D;&#x3D; 1 &#x2F;&#x2F; trueObject.is(1, 1) &#x2F;&#x2F; true&#39;a&#39; &#x3D;&#x3D;&#x3D; &#39;a&#39; &#x2F;&#x2F; trueObject.is(&#39;a&#39;, &#39;a&#39;) &#x2F;&#x2F; truetrue &#x3D;&#x3D;&#x3D; true &#x2F;&#x2F; trueObject.is(true, true) &#x2F;&#x2F; t">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-26T10:46:00.000Z">
-<meta property="article:modified_time" content="2020-06-27T15:04:08.000Z">
+<meta property="article:modified_time" content="2020-07-01T10:57:40.000Z">
 <meta property="article:author" content="lisa">
 <meta property="article:tag" content="object.is()">
 <meta name="twitter:card" content="summary">
@@ -225,7 +225,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-27 23:04:08" itemprop="dateModified" datetime="2020-06-27T23:04:08+08:00">2020-06-27</time>
+                <time title="修改时间：2020-07-01 18:57:40" itemprop="dateModified" datetime="2020-07-01T18:57:40+08:00">2020-07-01</time>
               </span>
 
           
@@ -241,7 +241,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>817</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -280,6 +280,16 @@
 <p>试着用上面提供的方法做一下</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> mask = <span class="function">(<span class="params">str,maskChar=<span class="string">'#'</span></span>)=&gt;</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> str.slice(<span class="number">-4</span>).padStart(str.length,maskChar);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mask(<span class="string">'123456'</span>)) <span class="comment">// ##3456</span></span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p><strong>Object.fromEntries()和Object.entries()</strong></p>
+</blockquote>
+<p>场景需要：<br>let obj = {a:1,b:2,c:3}; 提取对象中所有value值大于1的键值对并返回最新的对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> newObj = <span class="built_in">Object</span>.fromEntries(<span class="built_in">Object</span>.entries(obj).filter(<span class="function">(<span class="params">[k,v]</span>)=&gt;</span>v&gt;<span class="number">1</span>)); <span class="comment">// &#123;b: 2, c: 3&#125;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>…rest代替arguments</strong></p>
+</blockquote>
+<p>es6箭头函数中不识别arguments对象，使用…rest来替代arguments获取参数。</p>
 
     </div>
 
