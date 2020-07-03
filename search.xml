@@ -289,29 +289,30 @@
 <p>但对于NaN、0、+0、 -0，则和 “===” 不同</p>
 <a id="more"></a>
 
-
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span> <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>, <span class="literal">NaN</span>) <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> === <span class="number">-0</span> <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="number">0</span>, <span class="number">-0</span>) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="number">-0</span> === +<span class="number">0</span> <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="number">-0</span>, +<span class="number">0</span>) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="literal">NaN</span> === <span class="literal">NaN</span> <span class="comment">// false</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="literal">NaN</span>, <span class="literal">NaN</span>) <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="number">0</span> === <span class="number">-0</span> <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="number">0</span>, <span class="number">-0</span>) <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line">    -</span><br><span class="line">    <span class="number">0</span> === +<span class="number">0</span> <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.is(<span class="number">-0</span>, +<span class="number">0</span>) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p><strong>es8新增语法 padStart()padEnd()</strong></p>
 </blockquote>
-<p>这两个函数方法是ES8新增的实例方法，不兼容IE浏览器，函数接受两个参数，第一个是字符串需要填充的目标长度（必填），第二个是填充字符串（可选）,如果填充的字符串长度超过了目标长度，则保留最左侧的部分。<br>使用方法如下：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">'x'</span>.padStart(<span class="number">4</span>,<span class="string">'ab'</span>); <span class="comment">// 'abax'</span></span><br><span class="line"></span><br><span class="line"><span class="string">'x'</span>.padEnd(<span class="number">5</span>,<span class="string">'ad'</span>); <span class="comment">// 'xabab'</span></span><br></pre></td></tr></table></figure>
+<p>这两个函数方法是ES8新增的实例方法，不兼容IE浏览器，函数接受两个参数，第一个是字符串需要填充的目标长度（必填），第二个是填充字符串（可选）, 如果填充的字符串长度超过了目标长度，则保留最左侧的部分。<br>使用方法如下：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="string">'x'</span>.padStart(<span class="number">4</span>, <span class="string">'ab'</span>); <span class="comment">// 'abax'</span></span><br><span class="line"></span><br><span class="line"><span class="string">'x'</span>.padEnd(<span class="number">5</span>, <span class="string">'ad'</span>); <span class="comment">// 'xabab'</span></span><br></pre></td></tr></table></figure>
 
-<p>假设现在有这样一个需求，实现mask函数将’123456’转为’##3456’,只保留最后四个字符。</p>
+<p>假设现在有这样一个需求，实现mask函数将’123456’转为’##3456’, 只保留最后四个字符。</p>
 <p>试着用上面提供的方法做一下</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mask = <span class="function">(<span class="params">str,maskChar=<span class="string">'#'</span></span>)=&gt;</span>&#123;</span><br><span class="line">   <span class="keyword">return</span> str.slice(<span class="number">-4</span>).padStart(str.length,maskChar);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mask(<span class="string">'123456'</span>)) <span class="comment">// ##3456</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> mask = <span class="function">(<span class="params">str, maskChar = <span class="string">'#'</span></span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> str.slice(<span class="number">-4</span>).padStart(str.length, maskChar);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(mask(<span class="string">'123456'</span>)) <span class="comment">// ##3456</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p><strong>Object.fromEntries()和Object.entries()</strong></p>
 </blockquote>
-<p>场景需要：<br>let obj = {a:1,b:2,c:3}; 提取对象中所有value值大于1的键值对并返回最新的对象</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span> newObj = <span class="built_in">Object</span>.fromEntries(<span class="built_in">Object</span>.entries(obj).filter(<span class="function">(<span class="params">[k,v]</span>)=&gt;</span>v&gt;<span class="number">1</span>)); <span class="comment">// &#123;b: 2, c: 3&#125;</span></span><br></pre></td></tr></table></figure>
+<p>场景需要：<br>let obj = {a:1, b:2, c:3}; 提取对象中所有value值大于1的键值对并返回最新的对象</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> newObj = <span class="built_in">Object</span>.fromEntries(<span class="built_in">Object</span>.entries(obj).filter(<span class="function">(<span class="params">[k, v]</span>) =&gt;</span> v &gt; <span class="number">1</span>)); <span class="comment">// &#123;b: 2, c: 3&#125;</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p><strong>…rest代替arguments</strong></p>
 </blockquote>
-<p>es6箭头函数中不识别arguments对象，使用…rest来替代arguments获取参数。</p>
+<p>es6箭头函数中不识别arguments对象，使用…args来替代arguments获取参数。</p>
+<p>举例说明：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// es5 以下两种方法都可以</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">one</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">arguments</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">one</span>(<span class="params">...args</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> args;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// es6 只能通过这种方式获取 args是一个数组</span></span><br><span class="line"><span class="keyword">const</span> two = <span class="function">(<span class="params">...args</span>) =&gt;</span> args;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
         <tag>object.is()</tag>
