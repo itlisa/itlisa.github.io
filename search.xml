@@ -560,4 +560,11 @@
 <p>filter:hue-rotate() 色调旋转滤镜 单位支持deg（0~360deg）以及其他css单位 。好处是省代码，不用重复设置border，color和bg的颜色，不兼容IE,Edge13+支持，其他浏览器支持</p>
 ]]></content>
   </entry>
+  <entry>
+    <title>隐藏浏览器右侧滚动条</title>
+    <url>/2020/08/30/%E9%9A%90%E8%97%8F%E6%BB%9A%E5%8A%A8%E6%9D%A1%E5%B9%B6%E4%BF%9D%E7%95%99%E9%BC%A0%E6%A0%87%E6%BB%9A%E5%8A%A8%E6%95%88%E6%9E%9C/</url>
+    <content><![CDATA[<figure class="highlight"><table><tr><td class="code"><pre><span class="line">// chrome 和Safari</span><br><span class="line"><span class="selector-class">.element</span><span class="selector-pseudo">::-webkit-scrollbar</span> &#123; <span class="attribute">width</span>: <span class="number">0</span> <span class="meta">!important</span> &#125; </span><br><span class="line">// IE 10+</span><br><span class="line"><span class="selector-class">.element</span> &#123; <span class="attribute">-ms-overflow-style</span>: none; &#125; </span><br><span class="line">//Firefox</span><br><span class="line">scrollbar-width:none;  // 给html加</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
 </search>
